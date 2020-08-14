@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import inst from './axios';
+import reqs from './request';
+import Row from './Row'
 
 function App() {
+  const [trendingShows, setTrendingShows] = useState([]);
+  const [NFLXShows, setNFLXShows] = useState([]);
+
+  useEffect(()=> {
+    getAllsShowRows();
+  }, []);
+
+  const getAllsShowRows = async () => {
+    const nflxRes = await inst.get(reqs.getNLFXOGs);
+    setNFLXShows(nflxRes.data.results);
+
+    const trendingRes = await inst.get(reqs.getTrending);
+    setTrendingShows(trendingRes.data.results);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Row title="NETFLIX Originals" shows={NFLXShows}/>
+      <Row title="Trending Now" shows={trendingShows}/>
     </div>
   );
 }

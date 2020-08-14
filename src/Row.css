@@ -1,0 +1,17 @@
+.row__shows {
+    display: flex;    
+}
+
+.row__image {
+    width: 300px;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 450ms;
+    margin-right: 20px;
+}
+
+.row_image:hover {
+    
+}
+
+
