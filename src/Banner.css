@@ -1,0 +1,72 @@
+.banner {
+  color: white;
+  background-size: cover;
+  background-position: center;
+  object-fit: contain;
+  height: 50vw;
+  max-height: 500px;
+  padding-top: 2em;
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.banner__text {
+  margin-left: 2em;
+  width: 30%;
+  height: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  border-radius: 20px;
+  overflow-y: scroll;
+}
+
+.banner__text::-webkit-scrollbar {
+  display: none;
+}
+
+.banner__header {
+  font-weight: 800;
+}
+.banner__buttons {
+  display: flex;
+}
+.banner__button {
+  border: none;
+  padding: 2em;
+  padding-top: 1em;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 2em 0;
+  margin-right: 2em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  transition: all 450ms;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.banner__button:hover {
+  background-color: rgb(255, 255, 255, 0.5);
+  color: black;
+}
+
+.banner__sum {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.banner__fade {
+  height: 7.4rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+}

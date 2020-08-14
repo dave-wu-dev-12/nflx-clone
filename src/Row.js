@@ -19,16 +19,23 @@ function Row({ title, reqURL, useBackdrop }) {
     <div className="row">
       <h3 className="row__title">{title}</h3>
       <div className="row__movies">
-        {movies.map((mov) => (
-          <img
-            key={mov.id}
-            className="row__image"
-            src={`${base_url}${
-              useBackdrop ? mov.backdrop_path : mov.poster_path
-            }`}
-            alt={mov.name}
-          />
-        ))}
+        {movies.map((mov) =>
+          useBackdrop ? (
+            <img
+              key={mov.id}
+              className="row__image"
+              src={`${base_url}${mov.backdrop_path}`}
+              alt={mov.name}
+            />
+          ) : (
+            <img
+              key={mov.id}
+              className="row__image"
+              src={`${base_url}${mov.poster_path}`}
+              alt={mov.name}
+            />
+          )
+        )}
       </div>
     </div>
   );
