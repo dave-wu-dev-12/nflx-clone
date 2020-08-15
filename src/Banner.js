@@ -32,7 +32,7 @@ function Banner({ reqURL }) {
         <h1 className="banner__header">
           {movie?.name || movie?.original_name || movie?.title}
         </h1>
-        <div class="banner__buttons">
+        <div className="banner__buttons">
           <button className="banner__button">Play</button>
           <button className="banner__button">Add to My List</button>
         </div>

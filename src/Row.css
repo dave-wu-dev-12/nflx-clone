@@ -1,5 +1,5 @@
 .row__image {
-  width: 100%;
+  width: 200px;
   object-fit: contain;
   max-height: 200px;
   margin-right: 10px;
